@@ -1,0 +1,954 @@
+{
+  "chrome": {
+    "Bookmarks, Tabs & Session Management": {
+      "description": "Tasks related to organizing web resources and managing the browsing session. Includes restoring closed tabs, creating desktop shortcuts for specific URLs, organizing bookmarks into folders, and saving current pages for future reference.",
+      "prompts": [
+        "Pin the tab with my email client so it stays open as a small icon and doesn't get lost among other tabs.",
+        "I just accidentally closed a tab. Can you restore the most recently closed tab for me?",
+        "Create a new folder on the bookmarks bar called 'Research' and move the currently open tabs into it.",
+        "I have too many tabs open. Help me bookmark all open tabs into a folder named 'Session_Save' so I can close them."
+      ]
+    },
+    "Browser Configuration & Personalization": {
+      "description": "Tasks related to customizing the browser's user interface and behavior to suit personal preferences. This includes changing languages, adjusting font sizes for accessibility, modifying the default search engine, toggling themes (Dark Mode), reverting UI designs, managing user profiles/usernames, and configuring startup behaviors or search result display settings.",
+      "prompts": [
+        "The new tab page is too cluttered with suggestions. Can you set it to show just a blank page instead?",
+        "The text on every website looks too small for me. Can you increase the default font size across all pages?",
+        "Every time I open Chrome it goes to a shopping site I don't use anymore. Help me change what page loads on startup.",
+        "I prefer having DuckDuckGo as my main search engine rather than the default. Help me switch it over.",
+        "I'd like to switch my browser's interface language to Spanish since I'm learning the language and want more immersion.",
+        "I keep getting asked for my location on every site. Can you change the default location permission to 'block'?",
+        "My kids use this computer too. Help me set up a separate profile with restricted settings for them.",
+        "The browser theme is too bright at night. Can you enable the dark appearance for all websites?"
+      ]
+    },
+    "Cross-Application Integration & Complex Workflows": {
+      "description": "Advanced tasks where Chrome interacts with other applications (Excel, Google Drive, Thunderbird, Terminal). This involves extracting data from the web to spreadsheets, uploading local files to cloud storage, opening links from emails, and automating multi-step workflows across the OS environment. Different applications should demonstrate collaborative relationships rather than isolated tasks, such as subsequent application operations utilizing information and results obtained from prior applications. You can embed information within the reasoning process of the current step to pass it on to subsequent steps. Cross-application collaborative behavior must be demonstrated within the first 10 steps.",
+      "prompts": [
+        "Convert the document 'proposal.docx' on the Desktop to PDF format and upload it to my cloud storage in the 'proposals' folder.",
+        "Browse the daily trending repositories on a code hosting platform and record the project names, stars, and descriptions into the open spreadsheet.",
+        "Save all the chart images from the document attached to the most recent email in my 'Reports' folder, and upload them as individual PNG files to a cloud storage folder for later use.",
+        "Open the first web link found in the newest email from my 'Newsletters' folder in Thunderbird and display it in a new browser tab.",
+        "Add a new entry for a notable researcher from their online academic profile into the existing spreadsheet of experts I'm tracking.",
+        "I have a watchlist of movies in my spreadsheet. Search for the top-rated films from last year on a movie database and add any that aren't already in my list, sorted by rating.",
+        "Export my emails from a specific folder as individual files named by their subject, and save them to a cloud storage folder for backup.",
+        "Extract the data from a new spreadsheet uploaded to my cloud storage and import it into a LibreOffice Calc file on the Desktop.",
+        "I cloned a personal website template to my local workspace. Based on an online setup guide, find and update the author name and social media links in the configuration file to my information.",
+        "Merge all PDF documents attached to the most recent email with 'Report' in the subject into a single file and upload it to my cloud drive.",
+        "Set up my morning workspace automatically: open the project folder in both the terminal and file manager, then open the team dashboard and documentation site in Chrome.",
+        "Take the form template from the Desktop, fill it using data from the open web page, convert to PDF, and upload to the shared cloud folder.",
+        "Download all attachments from the oldest email in my 'Receipts' folder, save them to a cloud storage folder, and then move that email to an 'Archived' folder."
+      ]
+    },
+    "File Management, Conversion & Downloads": {
+      "description": "Workflows involving the browser as a tool for file manipulation. This includes downloading files (PDFs, EPUBs), converting web pages to PDF, using online tools to convert file formats (Word to PDF, Text to EPUB), and managing extensions or local file installations via the browser.",
+      "prompts": [
+        "Capture the main content from this tutorial page (from the introduction heading to just before the comments section) and save it as 'tutorial_notes.docx' on the Desktop.",
+        "Install the unpacked browser extension located in the ~/extensions/my-tool folder into Chrome.",
+        "Download all the lecture slides from this course page, keeping their original filenames, into my 'lectures' folder.",
+        "I'm following a serialized story online. Download the latest chapter I haven't read yet and save it in my 'reading' collection folder.",
+        "Convert this plain text file into an EPUB ebook using an online converter tool, and name it after the book's title.",
+        "Generate a starter browser extension project using a web scaffolding tool, tag it 'quick-notes v0.0.1', skip the description for now, enable a popup and content script, and unzip the result to ~/Projects.",
+        "Save the article I'm reading as a PDF and place it on the Desktop for offline reading later."
+      ]
+    },
+    "Privacy, Security & Data Management": {
+      "description": "Operations focused on user privacy and data hygiene. Instructions include enabling 'Do Not Track', managing saved passwords, clearing specific browsing history (e.g., YouTube) or tracking cookies (e.g., Amazon), configuring automatic data deletion, and enabling security warnings for unsafe websites.",
+      "prompts": [
+        "I want to check what usernames and passwords Chrome has saved for me without logging into any accounts yet.",
+        "Remove all the tracking cookies that Facebook has stored on my browser to keep my social browsing more private.",
+        "Can you turn on the setting that asks websites not to track my browsing activity across the web?",
+        "My Netflix viewing history is cluttering my browsing records. Help me clear just the Netflix entries from my history.",
+        "Set up Chrome to automatically clear all my browsing data including cookies and cache each time I close it.",
+        "Enable the safety feature that warns me before I visit a site that might be trying to steal my information."
+      ]
+    },
+    "Search, Navigation & Information Retrieval": {
+      "description": "Requests to find specific information, products, or services online. This encompasses e-commerce searches (filtering by price, size, specifications), travel planning (flights, hotels, car rentals), fact-checking (scores, side effects), comparisons, and navigating to specific pages or databases.",
+      "prompts": [
+        "Browse the list of available tax forms for small business owners on the government website.",
+        "Find the eligibility requirements for a library card in this city and what documents I need to bring.",
+        "Compare the specifications and user reviews of the two latest flagship smartphones side by side.",
+        "Create a filtered list of Bluetooth headphones that are noise-cancelling, over-ear, and rated 4+ stars.",
+        "Find a gaming laptop with at least 16GB RAM and a dedicated graphics card under $1500 on an electronics store.",
+        "Browse children's science experiment kits and sort the results by customer review rating.",
+        "Check the status of all departing flights from LAX to the Bay Area for tomorrow afternoon.",
+        "Check the extended weather forecast for Tokyo for the last two weeks of next month.",
+        "Open the airline's baggage policy page to check weight and size limits for international flights.",
+        "Find a women's waterproof hiking jacket in size medium, preferably in a bright color for visibility.",
+        "Find the next available camping reservation slot for a weekend at Yosemite National Park.",
+        "Help me schedule a DMV appointment for license renewal on the earliest available Tuesday morning slot, and fill in my details (Jane Smith, jane.smith@email.com) without submitting the final booking yet.",
+        "Show me the match results and highlights for the most recent championship tennis final.",
+        "Search for a boutique hotel in downtown Austin with great reviews, checking in this Friday for two nights.",
+        "Search for used hybrid cars within 30 miles of zip code 90210 with a maximum price of $20,000.",
+        "Search for a round-trip flight from Barcelona to Rome for the second week of next month.",
+        "Search for baby names that have meanings related to nature and are easy to pronounce in multiple languages.",
+        "Search for a mid-size SUV rental available next weekend in the Denver area with unlimited mileage.",
+        "Help me browse an online plant database to find indoor plants that are safe for pets and need low light.",
+        "Find the official support page about getting a refund for a digital purchase.",
+        "Find a direct flight from Chicago to London in the first week of next month, sorted by shortest duration.",
+        "Explore an online forum's most active discussion threads and open one with the highest engagement.",
+        "Look up a restaurant on a review site and find one with the best rating for outdoor dining in Portland.",
+        "Look up the train schedule from Boston to Washington DC for next Friday morning.",
+        "Show me the potential interactions between two common over-the-counter medications I take together.",
+        "Copy the value from a specific cell in this spreadsheet and search for it online to verify the data.",
+        "Create a filtered list of Bluetooth headphones that are noise-cancelling, over-ear, and rated 4+ stars."
+      ]
+    }
+  },
+  "gimp": {
+    "CLI_Scripting_External": {
+      "description": "Scenarios where GIMP is NOT initially launched. Instead, the environment starts with a Terminal or Code Editor (VS Code) open, and asset files are placed on the Desktop. This covers Batch Processing via command line, Automating tasks using Script-Fu (Scheme) or Python-Fu, launching GIMP in headless mode, developing plugins, or performing bulk operations that are more efficient via CLI than GUI. It focus on the agent's ability to use system tools to interact with GIMP's backend or automate workflows.",
+      "prompts": [
+        "Slice a large image into a 3x3 grid of equal tiles using command-line tools, and arrange them in a new composition.",
+        "Start GIMP from the terminal and open 'photo.png', then crop the bottom 25% off the image and save as 'cropped.png'.",
+        "Run a batch process to apply auto levels adjustment to all PNG images in the current folder and save them to an 'enhanced' subfolder.",
+        "Select and extract the main subject from 'portrait.png' using GIMP's selection tools, then write a Python script that replicates the same extraction automatically.",
+        "Set up VS Code with the proper extensions for editing GIMP scripts, then write a script to add a watermark to all images."
+      ]
+    },
+    "Color_Light_Mode": {
+      "description": "Tasks focused on adjusting the chromatic and tonal properties of the image without altering its shape or resolution. These actions primarily involve the 'Colors' menu (Brightness-Contrast, Hue-Chroma, Levels, Curves) and 'Image > Mode' settings. The goal is to correct lighting, enhance vibrancy, or change the color space (e.g., RGB to Grayscale/CMYK simulation) for specific output standards.",
+      "prompts": [
+        "Help me switch the image color mode to indexed with a palette of 256 colors for web optimization.",
+        "Apply a warm golden tone to this image to give it a sunset-like atmosphere.",
+        "The photo came out too dark from the camera. Can you brighten it up while preserving the details?",
+        "Convert this color photograph to black and white for a classic look.",
+        "I want to make the shadows darker and the highlights brighter to give this portrait more dramatic contrast.",
+        "Make the colors in this landscape photo more vivid and punchy - the original looks a bit washed out."
+      ]
+    },
+    "Complex_Workflow_Format_Specific": {
+      "description": "Scenarios requiring specialized file formats (e.g., RAW, Video, PDF) or interaction with external applications (Web Browsers, Office Suites). Initialization may involve placing specific non-standard files or launching auxiliary apps alongside GIMP. This covers RAW image processing (requiring import dialogs), Video frame editing (trimming, GIF creation), Cross-App workflows (Copy-Paste to LibreOffice, importing assets from a Browser), and handling web-sourced assets. It tests the agent's ability to handle GIMP's import/export plugins and system-level clipboard/file interactions.",
+      "prompts": [
+        "Download an image from a given URL, open it in GIMP, and compress it to under 400KB while keeping reasonable quality.",
+        "Import this camera raw file and export it as a high-quality JPEG for sharing online.",
+        "Open this short video clip in GIMP and extract frames from the 1-second to 3-second mark for an animation project.",
+        "Copy the edited image from GIMP and paste it into a LibreOffice Writer document, then save the document on the Desktop.",
+        "Download the university logo from its official website in PNG format and open it directly in GIMP for editing."
+      ]
+    },
+    "Environment_Configuration": {
+      "description": "Scenarios where GIMP is launched without loading any specific file (Blank Start). The user's goal is to customize the workspace or application behavior. This category covers Interface Customization (Themes, Icon Themes, Toolbox layout, Dockable Dialogs arrangement), System Resources configuration (Tile Cache, Hardware Acceleration), Tool Preferences (Default Grid, Guides, Snapping), and History Management (Undo levels). It tests the agent's ability to navigate the 'Edit -> Preferences' menu and window management features.",
+      "prompts": [
+        "Close the layers panel on the right side since I'm working on a simple single-layer edit.",
+        "Increase the number of undo steps from the default to 200 so I have more room to experiment.",
+        "Configure the default grid spacing to 20 pixels with a subtle dotted line style for precise alignment work.",
+        "Change the icon theme to use colorful symbolic icons instead of the default monochrome ones."
+      ]
+    },
+    "File_IO_Conversion": {
+      "description": "Tasks focused on the Input/Output pipeline, specifically converting file formats and saving assets. These actions primarily involve the 'File' menu (Export As, Overwrite, Save Copy). The goal is to prepare the final file for delivery, involving format changes (e.g., PNG to SVG/JPG), file renaming, and compression settings, rather than altering the visual content of the pixels.",
+      "prompts": [
+        "Convert this PNG logo file to SVG vector format for use in print materials that need scaling.",
+        "Export this image to the Desktop as a JPEG with 85% quality and rename it to 'profile_photo.jpg'."
+      ]
+    },
+    "Project_Layer_Manipulation": {
+      "description": "Scenarios requiring a project file with preserved structure (e.g., .XCF, .PSD) or tasks that explicitly involve creating/managing multiple layers. The environment initializes with a multi-layer file to enable structural editing. This category covers managing the Layer Stack (reordering, locking, grouping), adjusting Layer Attributes (Opacity, Blend Modes), using Selection Tools (Rectangle, Fuzzy, Path) to isolate objects, manipulating Text Layers (typography, box resizing), handling Alpha Channels (transparency, masking), and performing geometric transformations on specific layers rather than the whole canvas.",
+      "prompts": [
+        "Remove the white background from this product photo to make it transparent for the online catalog.",
+        "Group all the text layers together into a folder called 'Typography' for better organization.",
+        "Scale just the watermark layer to 50% of its current size without affecting the main image dimensions.",
+        "Select just the circular logo in the center and make it 20% larger while keeping it centered.",
+        "Move the text layer to the right by about 100 pixels - it's overlapping with the main subject.",
+        "Fill the bottom layer with a solid dark blue color while keeping the logo layer on top unchanged."
+      ]
+    },
+    "Spatial_Transform_Filters": {
+      "description": "Tasks focused on manipulating the physical dimensions, orientation, or artistic texture of the image. These actions primarily involve the 'Image' menu (Scale Image, Canvas Size, Transform), 'Tools' (Rotate, Flip, Crop), and the 'Filters' menu (Blur, Light and Shadow, Distorts). The goal is to change how the image is presented spatially or to apply algorithmic visual effects.",
+      "prompts": [
+        "Open the drop shadow filter dialog so I can add a shadow effect behind the selected layer.",
+        "Rotate the image 15 degrees clockwise to straighten the tilted horizon line.",
+        "Resize the image to exactly 800 pixels wide while keeping the original proportions.",
+        "Apply a Gaussian blur to the background layer to create a depth-of-field effect that keeps the foreground sharp."
+      ]
+    }
+  },
+  "libreoffice_calc": {
+    "Advanced Formulas & Array Operations": {
+      "description": "This category involves complex calculations requiring array formulas, nested functions, or specialized mathematical operations. It includes tasks such as conditional sums or counts with multiple criteria (SUMIFS, COUNTIFS), array-based manipulations, matrix operations, and implementing custom calculations beyond basic arithmetic. These operations often require formula auditing and step-by-step evaluation.",
+      "prompts": [
+        "Calculate the average sales for products in the 'Electronics' category with a rating above 4 stars.",
+        "Count how many transactions occurred on weekends (Saturday or Sunday) in the 'Date' column.",
+        "Use an array formula to find the maximum sales value for each region and display it in a summary table.",
+        "Calculate the weighted average of test scores where each test has a different percentage contribution.",
+        "Determine the median value of 'House Prices' but only for properties with 3 or more bedrooms.",
+        "Create a formula that extracts unique values from a list without using the 'Remove Duplicates' feature."
+      ]
+    },
+    "Collaboration & Sharing Features": {
+      "description": "This category involves tasks related to multi-user collaboration, version control, and sharing spreadsheet data with others. It includes setting up shared workbooks, tracking changes made by different users, adding comments or notes to cells, protecting specific cells or sheets with passwords, and preparing spreadsheets for distribution to stakeholders who may not have the same software.",
+      "prompts": [
+        "Turn on 'Track Changes' so I can see what modifications other team members make to this budget sheet.",
+        "Add comments to cells in the 'Assumptions' column explaining the reasoning behind each value.",
+        "Protect the 'Formulas' sheet with a password so users can only edit the input cells, not the calculations.",
+        "Prepare this report for sharing by removing all personal employee information except their department.",
+        "Compare two versions of the same workbook and highlight the differences in a third 'Comparison' sheet.",
+        "Set up this spreadsheet for real-time collaboration so multiple people can work on it simultaneously."
+      ]
+    },
+    "Cross-Application Document Collaboration": {
+      "description": "This category focuses on workflows that require interaction between the spreadsheet and other office applications (Word/Writer, Google Docs, PDF tools). Tasks include transferring data tables to text documents, generating PDF forms from sheet data, checking document formatting standards (like APA), or creating reports that synthesize information from multiple document types.",
+      "prompts": [
+        "Compare the numbers in this spreadsheet with the invoice PDFs in the 'invoices' folder and flag any mismatches.",
+        "Open the CSV export and verify that all numeric fields are correctly formatted in a text editor.",
+        "Use the spreadsheet data to fill in the blank form fields in the PDF template on the Desktop.",
+        "Export the chart as an image and embed it into the presentation slides for the quarterly review meeting.",
+        "Copy the summary table from this spreadsheet and paste it as a formatted table into a new Writer document.",
+        "Take the data from the contact list spreadsheet and merge it into a mail template in Writer for bulk printing."
+      ]
+    },
+    "Data Calculation & Statistics": {
+      "description": "This category encompasses tasks focused on mathematical and logical data processing within the spreadsheet. It involves defining formulas for arithmetic operations (e.g., summing totals, subtracting costs to find profit), performing financial calculations (e.g., growth rates, period rates), handling date and time arithmetic (e.g., calculating age, maturity dates), and using logical functions to derive new values based on existing data conditions. The goal is to generate quantitative insights or computed fields from raw inputs.",
+      "prompts": [
+        "Help me calculate the year-over-year growth rate in a new column next to my yearly earnings table.",
+        "Please create a formula to calculate the weighted average score for each student based on different exam weights.",
+        "Help me determine which products have sales above the monthly average and flag them in a 'High Performer' column.",
+        "Calculate the compound annual growth rate for each investment in my portfolio spreadsheet.",
+        "I need to convert my employee hours (stored as time format) into decimal hours and multiply by the hourly rate to get payroll amounts.",
+        "I need to compute the number of working days between two dates for each project entry in my tracking sheet.",
+        "I have a list of transactions and need to compute the running balance after each entry in a new column.",
+        "Add a column called 'Net Profit' and compute it by subtracting the expenses from the revenue for each quarter.",
+        "Create a new column 'Total Revenue' that sum up the monthly sales for each product line in my sales data.",
+        "I have a list of transactions and need to compute the running balance after each entry in a new column.",
+        "I need to compute the number of working days between two dates for each project entry in my tracking sheet."
+      ]
+    },
+    "Data Cleaning & Manipulation": {
+      "description": "This category covers operations related to data hygiene, organization, and transformation. Tasks include standardizing text formats (capitalization, trimming whitespace), manipulating strings (splitting text to columns, concatenation, padding numbers), filling missing or blank values, removing duplicates to ensure data integrity, sorting records based on specific criteria, and reordering or transposing dataset structures.",
+      "prompts": [
+        "Split the full address column into separate columns for street, city, and postal code.",
+        "Combine the first name and last name columns into a single 'Full Name' column with a space between them.",
+        "Sort the entire data range by the 'Date' column from newest to oldest.",
+        "Fill in the empty cells in the 'Category' column by copying down the value from the closest cell above it.",
+        "I need to convert all names in the 'Customer' column to proper case where the first letter of each word is capitalized.",
+        "Remove any duplicate rows based on the order ID column and keep only the most recent entry.",
+        "Find and remove all leading and trailing spaces from every cell in the product description column.",
+        "Convert all the phone numbers to a consistent format: (XXX) XXX-XXXX regardless of how they were entered.",
+        "Find and remove all leading and trailing spaces from every cell in the product description column.",
+        "I need to convert all names in the 'Customer' column to proper case where the first letter of each word is capitalized.",
+        "Find and remove all leading and trailing spaces from every cell in the product description column."
+      ]
+    },
+    "Data Visualization & Charts": {
+      "description": "This category involves converting numerical data into visual graphical representations to identify trends, comparisons, and patterns. Instructions typically request the creation of specific chart types (Column, Bar, Line, Clustered, Sparklines), configuration of chart elements (Titles, Axes, Legends), and the visual mapping of specific data series (e.g., Sales vs. Time, Growth percentages). It aims to make data analysis more intuitive through visualization.",
+      "prompts": [
+        "Make a horizontal bar chart ranking the top 10 products by customer satisfaction rating.",
+        "Set up a clustered column chart that compares budget vs. actual spending for each department.",
+        "Create a line chart showing the monthly website traffic over the past year with data labels on each point.",
+        "Create an area chart showing the cumulative revenue build-up across the fiscal year.",
+        "Help me add a trend line to the scatter plot of temperature vs. energy consumption.",
+        "I want to show mini sparkline charts in cells next to each row to visualize the trend of weekly sales."
+      ]
+    },
+    "Error Checking & Data Validation": {
+      "description": "This category deals with identifying, flagging, and correcting data inconsistencies, errors, or invalid entries. Tasks include checking for formula errors (#N/A, #VALUE!, #DIV/0!), validating data against predefined rules or lists, highlighting outliers, and ensuring data integrity through consistency checks. The aim is to maintain clean, reliable datasets free from common spreadsheet errors.",
+      "prompts": [
+        "Highlight all cells containing #N/A errors in the 'Lookup Results' column with yellow background.",
+        "Validate that all entries in the 'Email' column contain an '@' symbol and display 'Invalid' next to those that don't.",
+        "Check for duplicate entries in the 'Invoice Number' column and flag them in a new 'Duplicate?' column.",
+        "Identify cells in the 'Age' column that contain negative numbers or values over 150 and mark them for review.",
+        "Ensure that all dates in the 'Order Date' column are not in the future compared to today's date.",
+        "Verify that the sum of percentages in the 'Allocation' column equals 100% and alert if there's a discrepancy."
+      ]
+    },
+    "File Export & Format Conversion": {
+      "description": "This category handles the output and conversion of spreadsheet data to other file formats. It includes exporting sheets to CSV, PDF, or HTML, often with specific layout requirements (e.g., fitting to one page). It also covers command-line operations for batch processing or file merging, focusing on interoperability and data exchange standards.",
+      "prompts": [
+        "Batch export each sheet in the workbook as a separate CSV file into a 'exports' folder.",
+        "Export the current sheet to a PDF file with the page orientation set to landscape and fit all columns to one page.",
+        "Save the active worksheet as a CSV file with semicolons as the delimiter instead of commas.",
+        "Help me convert this ODS file to an XLSX format that can be opened in Microsoft Excel.",
+        "Save the pivot table results as a separate HTML file so I can embed it in a web page.",
+        "Export just the chart on this sheet as a PNG image file with 300 DPI resolution.",
+        "Convert the spreadsheet to a fixed-width text format and save it as 'report.txt' on the Desktop."
+      ]
+    },
+    "Formatting & Styling": {
+      "description": "This category focuses on the visual presentation and user interface attributes of the spreadsheet. It includes instructions for changing number formats (decimal precision, units like Millions/Billions, separators), applying conditional formatting (highlighting cells based on values), merging cells for headers, adjusting cell sizes, setting up data validation (dropdown lists), and managing the view (zooming) to enhance readability and usability.",
+      "prompts": [
+        "Change the number format for the 'Budget' column to show values in millions with one decimal place.",
+        "Set up a dropdown list in the 'Status' column that only allows 'Pending', 'In Progress', or 'Completed' as valid values.",
+        "Apply conditional formatting to highlight all cells in the 'Score' column that are above 90 with a green background.",
+        "Apply alternating row colors (zebra striping) to the entire data range for better readability.",
+        "Format the 'Revenue' column to display as currency with a dollar sign and two decimal places.",
+        "Adjust the column widths automatically so all content in each column is fully visible.",
+        "Freeze the first row and first column so the headers and labels are always visible when scrolling.",
+        "Merge the cells in the top row from A1 to E1 and center the title 'Annual Performance Report' across the selection.",
+        "Apply conditional formatting to highlight all cells in the 'Score' column that are above 90 with a green background."
+      ]
+    },
+    "Lookup & Reference Operations": {
+      "description": "This category focuses on retrieving and cross-referencing data from different parts of the workbook or external sources. It involves using lookup functions (VLOOKUP, HLOOKUP, XLOOKUP, INDEX-MATCH), referencing cells across sheets, creating dynamic named ranges, and linking data between multiple tables. The objective is to efficiently find and bring related data together based on specified criteria.",
+      "prompts": [
+        "Look up the price for each product in the 'Products' sheet based on the 'Product ID' in the current sheet.",
+        "Fetch the corresponding department name from Sheet2 using the employee ID as the lookup key.",
+        "Create a dynamic range for the 'Sales Data' table that automatically expands when new rows are added.",
+        "Use INDEX-MATCH to find the salesperson's name based on their unique ID in a separate 'Staff' sheet.",
+        "Pull exchange rates from an online source to convert all currency values to USD.",
+        "Reference the previous month's totals from 'Sheet_Jan' to calculate month-over-month growth in the current sheet."
+      ]
+    },
+    "Macro Recording & Automation": {
+      "description": "This category covers tasks related to automating repetitive spreadsheet operations through macro recording, basic VBA scripting, or built-in automation features. It includes recording sequences of actions, creating simple macros for formatting or calculations, assigning macros to buttons, and automating data import/export processes. The focus is on saving time and reducing manual effort for routine spreadsheet tasks.",
+      "prompts": [
+        "Record a macro that applies my standard formatting (font, borders, colors) to a selected range.",
+        "Create a button that, when clicked, sorts the data by the 'Date' column in descending order.",
+        "Automate the process of importing daily sales data from a CSV file in the 'Downloads' folder.",
+        "Write a simple macro that hides all rows where the 'Status' column is marked as 'Completed'.",
+        "Record actions to save the current sheet as a PDF with a filename based on today's date.",
+        "Create an automated backup system that copies the entire workbook every Friday at 5 PM."
+      ]
+    },
+    "Pivot Tables & Summarization": {
+      "description": "This category deals with aggregating large datasets to provide high-level summaries. It specifically targets the creation and configuration of Pivot Tables to count, sum, or average data across different dimensions (e.g., sales by product, revenue by promotion). It also includes creating manual summary tables to condense detailed records into analytical overviews.",
+      "prompts": [
+        "Create a cross-tabulation showing employee hours by project and week in a new sheet.",
+        "Generate a pivot table that shows the percentage distribution of product returns by reason code.",
+        "Build a pivot table that counts the number of support tickets by priority level for each department.",
+        "Summarize the average order value per customer segment in a pivot table and sort from highest to lowest.",
+        "Create a pivot table in a new sheet that shows the total sales amount grouped by product category and region.",
+        "Use a pivot table to show the maximum, minimum, and average transaction amount for each store location."
+      ]
+    },
+    "Sheet Management": {
+      "description": "This category pertains to the structural management of the workbook itself. Instructions involve manipulating worksheets (renaming, copying, moving order, creating backups), and managing the viewport configuration, such as freezing panes (rows/columns) to keep headers visible while scrolling. These tasks ensure the workbook is organized and navigable.",
+      "prompts": [
+        "Create a copy of the 'Template' sheet and place it at the end of all other sheets in the workbook.",
+        "Hide the raw data sheets from view so users only see the dashboard and summary sheets.",
+        "Rename the current sheet from 'Sheet1' to 'Q4_Summary' to better reflect its contents."
+      ]
+    },
+    "System File Management & Complex Workflows": {
+      "description": "This category covers high-level, multi-step tasks that involve operating system-level file management triggered by data analysis. It includes organizing files into folders (sorting, zipping) based on content or spreadsheet lists, cross-checking data between different file types (e.g., invoices vs. bank statements), and executing complex reasoning to filter and manage digital assets on the computer.",
+      "prompts": [
+        "Create a folder structure based on the department hierarchy defined in the org chart spreadsheet.",
+        "Zip up all expense receipts that match the approved entries in the budget spreadsheet for submission to accounting.",
+        "Move all files that are older than the date specified in the archive plan spreadsheet into an archive folder.",
+        "Organize all the downloaded reports into separate folders by year based on the date column in my tracking spreadsheet.",
+        "Check which files listed in the inventory sheet are missing from the project folder and create a missing-files report.",
+        "Rename all photos in a folder according to the naming convention described in the metadata spreadsheet.",
+        "Cross-reference the file names in the spreadsheet with the actual files on disk and update the status column."
+      ]
+    },
+    "Text Processing & Analysis": {
+      "description": "This category involves manipulating and analyzing textual data within spreadsheet cells. It includes tasks such as text extraction (using LEFT, RIGHT, MID functions), pattern matching with regular expressions, counting characters or words, finding and replacing specific text patterns, and performing text-based conditional operations. The goal is to process unstructured text data into structured formats or derive insights from text content.",
+      "prompts": [
+        "Extract the first 5 characters from the 'Product Code' column and place them in a new column called 'Short Code'.",
+        "Find all email addresses in the 'Comments' column and move them to a new column named 'Email Addresses'.",
+        "Count the number of words in each cell of the 'Description' column and display the count in a new column.",
+        "Replace all instances of 'Ltd.' with 'Limited' in the entire 'Company Name' column.",
+        "Check if the 'Address' column contains 'Street' or 'Avenue' and mark 'Y' or 'N' in a new 'Has Road Type' column.",
+        "Combine the 'First Name' and 'Last Name' columns with a space in between, but only if the 'Last Name' is not empty."
+      ]
+    },
+    "Web Search & Information Extraction": {
+      "description": "This category involves tasks that trigger external web searches to gather intelligence or verify data. It includes searching academic databases (Google Scholar, Arxiv) for papers, looking up business details (addresses, contacts) on Maps, or finding specific web pages. The retrieved information is typically used to populate, update, or verify records within the spreadsheet.",
+      "prompts": [
+        "Look up the population and area of each city in my travel planner spreadsheet using web search.",
+        "Search for the current stock prices of the companies listed in my portfolio sheet and update their values.",
+        "Search for academic papers related to each keyword in my research tracker and record the titles and authors.",
+        "Find the latest software version numbers for each tool listed in my IT inventory sheet.",
+        "Look up the official contact email for each university in my application tracking spreadsheet.",
+        "Search online for product reviews and add the average rating to each item in my comparison sheet.",
+        "Find the current exchange rates for all currencies in my international budget and update the conversion formulas.",
+        "Search online for product reviews and add the average rating to each item in my comparison sheet.",
+        "Look up the official contact email for each university in my application tracking spreadsheet."
+      ]
+    }
+  },
+  "libreoffice_impress": {
+    "Accessibility & Compatibility": {
+      "description": "Tasks focused on making presentations accessible to people with disabilities and ensuring compatibility across different systems and software versions. This includes adding alternative text for images, checking reading order for screen readers, ensuring sufficient color contrast, creating accessible table structures, adding closed captions for audio/video, testing keyboard navigation, ensuring compatibility with older Office versions, exporting to PDF with accessibility tags, checking presentation against accessibility standards, adding descriptive titles to all slides, creating a text-only version for assistive technologies, ensuring all animations are accessible, adding language tags for multilingual screen readers, testing with actual screen reader software, fixing common accessibility issues, creating accessible charts with data tables, ensuring timing doesn't interfere with accessibility, adding sign language interpretation video links, and verifying compatibility with mobile devices and different operating systems.",
+      "prompts": [
+        "Add alternative text descriptions to all images in the presentation for screen reader users.",
+        "Check and fix the reading order of elements on slide 4 so screen readers read them logically.",
+        "Ensure all text has sufficient color contrast against backgrounds (at least 4.5:1 ratio).",
+        "Format the table on slide 6 with proper header cells for accessibility.",
+        "Add closed captions to the embedded video on slide 3 for hearing-impaired viewers.",
+        "Test that all interactive elements can be accessed using keyboard-only navigation.",
+        "Save a version of this presentation that's compatible with PowerPoint 2010.",
+        "Export the presentation to PDF with full accessibility tags preserved.",
+        "Run the accessibility checker and fix all identified issues in the presentation.",
+        "Add descriptive titles to all slides (not just 'Slide 1', 'Slide 2') for screen readers.",
+        "Create a text-only version of the presentation content for use with assistive technologies.",
+        "Ensure that all animations don't interfere with screen readers' ability to access content.",
+        "Add language tags to text blocks for proper pronunciation by multilingual screen readers.",
+        "Test the presentation with NVDA screen reader software and fix any issues found.",
+        "Fix the common accessibility issue where text boxes are in the wrong reading order.",
+        "Create an accessible version of the chart on slide 5 that includes a data table alternative.",
+        "Ensure automatic slide timing doesn't prevent users with disabilities from reading content.",
+        "Add a link to sign language interpretation for the recorded presentation portions.",
+        "Test the presentation on mobile devices to ensure touch navigation works properly.",
+        "Verify the presentation displays correctly on both Windows and macOS systems."
+      ]
+    },
+    "Animation & Transition Effects": {
+      "description": "Tasks involving the creation and management of motion effects, animations, and slide transitions to enhance presentation dynamics. This includes applying entrance/exit animations to objects, creating motion paths, setting timing and sequencing, designing custom transitions, adding sound effects, controlling animation triggers, creating complex animation sequences, using emphasis effects, animating charts and diagrams, setting automatic slide advancement, creating interactive buttons with hover effects, designing build slides with layered animations, adding 3D rotation effects, creating zoom-in/zoom-out animations, animating text character by character, setting animation delays and durations, creating parallax scrolling effects, animating SmartArt graphics, and designing custom animation presets.",
+      "prompts": [
+        "Apply a 'Fade In' entrance animation to all bullet points on slide 3, making them appear one by one.",
+        "Create a motion path animation that moves the company logo from the left to the right side of slide 1.",
+        "Set all slide transitions to 'Cube' effect with a 1-second duration and medium speed.",
+        "Add a typewriter sound effect to the text animation on the title slide.",
+        "Make the chart elements animate one data series at a time when I click the mouse.",
+        "Design a complex animation sequence where the image zooms in, then text fades in, then arrows appear pointing to key areas.",
+        "Apply a 3D rotation animation to the product image on slide 4, making it spin 360 degrees.",
+        "Create a zoom-in animation that focuses on the important detail in the diagram on slide 7.",
+        "Animate the text character by character for the quote on slide 2, like it's being typed.",
+        "Set a 5-second delay before the exit animation begins for the warning message on slide 9.",
+        "Create a parallax scrolling effect between the background image and foreground elements on slide 6.",
+        "Animate the SmartArt graphic to build one shape at a time from left to right.",
+        "Design an interactive button that changes color when hovered over during the presentation.",
+        "Create a build slide where each element appears only when I click, then previous elements dim slightly.",
+        "Apply a 'Bounce' emphasis animation to the key statistic on slide 5 to draw attention.",
+        "Set the slides to automatically advance every 30 seconds for a kiosk presentation.",
+        "Create a custom animation preset that combines fade, move, and scale effects, and save it for reuse.",
+        "Add a 'Ripple' transition effect when moving from section 1 slides to section 2 slides.",
+        "Make the pie chart segments fly in from their corresponding positions on the slide.",
+        "Create an animation that simulates drawing the flowchart lines on slide 8 in sequence."
+      ]
+    },
+    "App Configuration & View Settings": {
+      "description": "Tasks involving the configuration of the LibreOffice Impress application interface, presentation display settings (monitor usage), and global preferences like auto-save.",
+      "prompts": [
+        "Turn on auto-save every 5 minutes so I don't risk losing work if the application crashes.",
+        "When I present, I only want the slideshow on one screen. Disable the presenter console that shows on the second monitor.",
+        "Change the measurement unit from inches to centimeters in the Impress preferences."
+      ]
+    },
+    "Chart & Diagram Creation": {
+      "description": "Tasks involving the creation, formatting, and customization of data visualizations including charts, graphs, diagrams, and flowcharts. This includes inserting various chart types (bar, line, pie, scatter), customizing chart elements (axes, legends, data labels), creating organization charts, designing process flow diagrams, customizing SmartArt graphics, adding trendlines to charts, creating combination charts, formatting chart colors and styles, animating chart elements, linking charts to external data sources, creating Gantt charts, designing Venn diagrams, customizing data point markers, adding error bars to scientific charts, creating waterfall charts for financial data, designing radar charts for comparisons, customizing chart templates, creating 3D charts with perspective effects, adding secondary axes to charts, and designing custom diagram layouts not available in default SmartArt.",
+      "prompts": [
+        "Insert a column chart comparing quarterly sales data for the past three years.",
+        "Customize the pie chart on slide 5 to show percentage labels outside each slice with leader lines.",
+        "Create an organization chart showing our company's management structure.",
+        "Design a process flowchart illustrating our customer service procedure.",
+        "Convert the existing bullet points into a SmartArt hierarchy diagram.",
+        "Add a linear trendline to the scatter plot showing the correlation between variables.",
+        "Create a combination chart with columns for actual sales and a line for targets.",
+        "Format all charts to use the company's brand colors (blue #0056A3 and gray #808080).",
+        "Animate the bar chart to grow each bar sequentially from left to right.",
+        "Link the chart on slide 7 to the Excel file 'Monthly_Data.xlsx' so it updates automatically.",
+        "Create a Gantt chart showing our project timeline with milestones.",
+        "Design a Venn diagram showing the overlap between three product features.",
+        "Customize the data point markers on the line chart to be star-shaped for important months.",
+        "Add error bars to the scientific chart showing measurement uncertainty.",
+        "Create a waterfall chart illustrating how we reached the net profit figure.",
+        "Design a radar chart comparing the performance of three different products across six criteria.",
+        "Save my custom chart formatting as a template for future charts in this presentation.",
+        "Create a 3D pie chart with perspective lighting and depth effects.",
+        "Add a secondary vertical axis to the chart to plot two different scales.",
+        "Design a custom diagram for our unique workflow that doesn't fit standard SmartArt categories."
+      ]
+    },
+    "Collaboration & Review Features": {
+      "description": "Tasks involving multiple users working on the same presentation, including commenting, revision tracking, change acceptance/rejection, comparing presentations, merging changes, and protecting slides from editing. This includes adding comments to specific slides or objects, replying to comments, tracking changes made by different authors, accepting or rejecting specific edits, comparing two versions of a presentation, merging changes from multiple reviewers, protecting specific slides with passwords, restricting editing to certain areas, showing/hiding markup, managing different reviewer colors, creating review cycles, exporting comments to a separate document, locking master slides from modification, setting presentation as read-only, tracking presentation statistics (number of edits, time spent), creating change logs, managing multiple authors with different permissions, and integrating with version control systems.",
+      "prompts": [
+        "Add a comment to the chart on slide 3 asking for verification of the Q4 data.",
+        "Reply to the existing comment from Sarah about the font choice on slide 1.",
+        "Turn on change tracking so all my edits are recorded with my name and timestamp.",
+        "Accept all changes made by the marketing team but reject the layout changes from design.",
+        "Compare this presentation with the version saved as 'Draft_V2.odp' and show differences.",
+        "Merge the changes from three different reviewers into this master presentation.",
+        "Protect slides 1-3 with a password so only I can edit the title and introduction slides.",
+        "Restrict editing so reviewers can only add comments but not change content.",
+        "Show all markup (comments and changes) in the presentation for final review.",
+        "Assign different colors to comments from different departments (blue for sales, green for engineering).",
+        "Start a new review cycle and send the presentation to five team members for feedback.",
+        "Export all comments and suggested changes to a Word document for offline review.",
+        "Lock the master slides so other team members can't change the overall design template.",
+        "Set the presentation as read-only except for the data slides that need weekly updates.",
+        "Generate statistics showing how many times each slide has been modified and by whom.",
+        "Create a change log documenting all major revisions made during the development process.",
+        "Give editing permissions to John for slides 5-8 but only comment permissions for the rest.",
+        "Integrate with our Git repository to track version history of the presentation file.",
+        "Highlight all changes made since last Thursday in yellow for quick review.",
+        "Create a summary page showing all unresolved comments and who needs to address them."
+      ]
+    },
+    "Complex Workflows & External Integration": {
+      "description": "Advanced tasks that combine Impress operations with external files or multi-step logic. This includes batch inserting images for kiosks, editing images externally before re-saving, or populating notes from external documents.",
+      "prompts": [
+        "The image on the cover slide looks too dull. Open it separately, boost its saturation, and replace the original with the enhanced version.",
+        "I've written my presentation script in a separate document. Help me copy each section into the corresponding slide's speaker notes area.",
+        "Combine all individual slide images into a single PDF document for easy distribution to the audience."
+      ]
+    },
+    "File Export & Conversion": {
+      "description": "Operations focusing on saving the presentation to different formats (PPTX, PNG) or extracting content to other document types (Writer/Docx).",
+      "prompts": [
+        "Convert this ODP presentation to PPTX format so my colleague using PowerPoint can open it.",
+        "Export just the text content from all slides into a plain document for content review, saving it as 'script.docx'.",
+        "Export each slide as a separate PNG image and save them all in a folder called 'slides_export' on the Desktop.",
+        "Extract all the speaker notes from every slide and compile them into a single Writer document named 'speaking_notes.docx' on the Desktop."
+      ]
+    },
+    "Interactive Elements & Hyperlinks": {
+      "description": "Tasks focused on making presentations interactive through hyperlinks, action buttons, embedded documents, and navigation controls. This includes creating internal links between slides, adding external website links, designing interactive menus, creating 'return to menu' buttons, embedding live documents or spreadsheets, adding email links, creating clickable image maps, designing quiz slides with feedback, adding document download links, creating navigation buttons for non-linear presentations, embedding web pages, adding tooltip text to objects, creating mouse-over effects, designing interactive timelines, adding bookmark links within the presentation, creating hidden slides accessible only through links, embedding YouTube videos with play controls, adding interactive hotspots, creating branching scenarios with multiple choice buttons, and designing interactive product catalogs with clickable items.",
+      "prompts": [
+        "Create a hyperlink from the text 'see details' on slide 3 to jump directly to slide 12.",
+        "Add an action button in the bottom-right corner of every slide to return to the table of contents.",
+        "Embed the Excel spreadsheet 'Q3_Results.xlsx' on slide 5 so it can be viewed during the presentation.",
+        "Make the company logo on the title slide clickable to open our website in a browser.",
+        "Design an interactive menu slide with buttons for each presentation section.",
+        "Add an email link to the contact information on the last slide that opens the user's email client.",
+        "Create an image map on the world map graphic where clicking different countries shows their data.",
+        "Design a quiz slide where clicking an answer option shows immediate feedback (correct/wrong).",
+        "Add a download link for the PDF brochure on slide 10.",
+        "Create a navigation bar at the bottom of each slide with Previous, Next, and Menu buttons.",
+        "Embed a live web page showing our stock price on slide 2.",
+        "Add tooltip text that appears when hovering over the technical terms on slide 6.",
+        "Create a hidden slide with backup data that can only be accessed by clicking a small info icon.",
+        "Embed a YouTube video on slide 4 with full play, pause, and volume controls.",
+        "Design an interactive timeline where clicking each year shows events from that period.",
+        "Create a branching scenario where the audience chooses what topic to cover next.",
+        "Add clickable hotspots on the product image that show different feature descriptions.",
+        "Create a table of contents where each item is a clickable link to its corresponding slide.",
+        "Design an interactive product catalog where clicking a product shows specifications and pricing.",
+        "Add a 'More Information' button that reveals additional content when clicked during the presentation."
+      ]
+    },
+    "Object & Media Management": {
+      "description": "Operations involving non-text elements such as images, tables, and audio. Instructions cover inserting these objects, moving/positioning them, resizing, and modifying table structures.",
+      "prompts": [
+        "Nudge the table down slightly so it doesn't overlap with the slide title.",
+        "Make the photographs on slides 4, 5, and 6 all the same height: 8cm each.",
+        "Increase the height of all images on the data slides to 10cm while keeping the text unchanged.",
+        "Stretch the header image to span the full width of the title slide without distorting its proportions.",
+        "Enter 'Q1', 'Q2', 'Q3', 'Q4' as the column headers in the first row of the selected table.",
+        "Move the company logo from the top-right corner to the bottom-left corner on all slides at once.",
+        "Add a 3x4 table to the pricing slide to organize the tier comparison.",
+        "Reposition the product photo to the right half of the slide so I can add text on the left side.",
+        "Insert the background music file from the Desktop to play automatically when the presentation starts.",
+        "Add a small icon image from the Desktop to each slide's footer area as a visual page marker.",
+        "Move the picture on page 2 to slide top."
+      ]
+    },
+    "Slide Content Formatting": {
+      "description": "Tasks focused on the visual styling of text and text boxes. This includes adjusting fonts (size, family), text colors, styles (bold, underline, strike-through), and paragraph alignment or indentation.",
+      "prompts": [
+        "Make the title text on each slide use a consistent font size: 44pt for titles and 24pt for body text.",
+        "On the agenda slide, increase the spacing between each bullet point to fill the slide better.",
+        "Underline all hyperlinks in the presentation so readers know they're clickable.",
+        "Set the first-level bullet points to be right-aligned and the second-level ones to be left-aligned.",
+        "Make all slide titles bold and change their color to a deep navy blue for a more professional appearance.",
+        "Change all the text in the presentation to use 'Liberation Sans' font for a cleaner look.",
+        "Mark three completed items in my project update slide with a strikethrough to show they're done.",
+        "Make the title text on each slide use a consistent font size: 44pt for titles and 24pt for body text.",
+        "On the agenda slide, increase the spacing between each bullet point to fill the slide better.",
+        "On the agenda slide, increase the spacing between each bullet point to fill the slide better.",
+        "Make the title text on each slide use a consistent font size: 44pt for titles and 24pt for body text.",
+        "Change all the text in the presentation to use 'Liberation Sans' font for a cleaner look.",
+        "Make the title text on each slide use a consistent font size: 44pt for titles and 24pt for body text.",
+        "Make the title text on each slide use a consistent font size: 44pt for titles and 24pt for body text.",
+        "Underline all hyperlinks in the presentation so readers know they're clickable."
+      ]
+    },
+    "Slide Master & Templates": {
+      "description": "Advanced formatting tasks that affect the overall presentation design through slide masters, layouts, and templates. This includes creating custom layouts, modifying master slides, applying templates globally, designing placeholders, and managing inheritance relationships. Possible tasks include: creating new slide layouts, editing master slide backgrounds, applying corporate templates to all slides, adding consistent headers/footers across presentations, modifying placeholder positions and styles, overriding master settings for specific slides, saving custom layouts as templates, importing external templates, creating speaker note templates, designing title slide layouts, setting default bullet styles, creating custom color schemes and font themes, managing master elements visibility, creating handout masters, and designing background graphics that appear on all slides.",
+      "prompts": [
+        "Create a new slide layout with a left-aligned title placeholder and a two-column content area.",
+        "Modify the master slide to include the company logo in the bottom-right corner of every slide.",
+        "Apply the 'Corporate Blue' template to all slides in the presentation.",
+        "Add a consistent footer with page numbers and copyright information to every slide except the title slide.",
+        "Change the default bullet style to a checkmark symbol for all content placeholders.",
+        "Create a custom color scheme based on our brand colors and apply it to the entire presentation.",
+        "Design a title slide layout with a large background image and centered title text.",
+        "Override the master background for slide 5 to use a gradient fill instead of the solid color.",
+        "Save my current slide designs as a reusable template for future presentations.",
+        "Import the template file 'marketing_department.otp' and apply it to this presentation.",
+        "Create a speaker notes template that includes slide thumbnails and date information.",
+        "Modify the content placeholder to have 1.5 line spacing and indented paragraphs by default.",
+        "Design a handout master that shows three slides per page with note lines beside each slide.",
+        "Hide the master background graphics on slides 2-4 while keeping other master elements.",
+        "Create a custom layout specifically for comparison slides with side-by-side content areas.",
+        "Set the default font for all new text boxes to 'Segoe UI' size 11pt.",
+        "Design a master slide with a timeline graphic running along the bottom of all content slides.",
+        "Create a section divider slide layout with a full-bleed background image and large section titles.",
+        "Modify the title placeholder to automatically capitalize every word in slide titles.",
+        "Create a custom template that includes animated transitions between slides by default."
+      ]
+    },
+    "Slide Structure & Properties": {
+      "description": "Tasks related to managing the slides themselves. This includes creating new slides, duplicating slides, setting background colors, defining slide titles, adding transitions, changing orientation, and using structural features like Summary Slides.",
+      "prompts": [
+        "Add a solid dark background to the final 'Thank You' slide with white text.",
+        "Give all slides with team photos a light gray background to make the images pop.",
+        "Insert a new blank slide after the current one and title it 'Discussion Questions'.",
+        "Make the background color of the introduction slide match the dark blue in the company logo.",
+        "Change the background of every slide to a gradient from light blue at the top to white at the bottom.",
+        "Use the summary slide feature to create an overview slide that lists all section titles.",
+        "Duplicate slides 8 and 9 since I need to create two variations of each.",
+        "Add a smooth 'fade' transition to all slides for a more polished presentation flow.",
+        "Change the slide's background to red.",
+        "Switch the entire presentation from landscape to portrait orientation for printing.",
+        "Set the title of slide 2 to 'Agenda' and right-align it to the top of the slide.",
+        "Go to the first slide and set a bright accent color background to grab attention from the start."
+      ]
+    },
+    "Text Content & Notes": {
+      "description": "Requests to edit the text content (adding/deleting words), add bullets, or manage speaker notes attached to slides.",
+      "prompts": [
+        "For each slide in the presentation, copy the slide title into the speaker notes section.",
+        "Remove the personal contact details from the last slide before I share this publicly.",
+        "Add a note \"APP\" into the slide.",
+        "Add the title to note.",
+        "delete the personal information in slide 4.",
+        "Convert the plain text list on slide 4 into properly formatted bullet points."
+      ]
+    }
+  },
+  "libreoffice_writer": {
+    "Advanced Content Editing & Logic": {
+      "description": "Complex editing tasks that require applying logic or conditions to the text content. This involves analyzing text to remove duplicates, applying conditional formatting (coloring based on vowels), or making editorial decisions like striking through redundant paragraphs.",
+      "prompts": [
+        "Review the document and strike through the final paragraph since I've decided to remove that section.",
+        "I have a log file where each line records train arrivals. Remove all duplicate train IDs so I can see how many unique trains passed through today.",
+        "Color all words that begin with a vowel in blue and words that begin with a consonant in red to create a reading exercise for my student."
+      ]
+    },
+    "Content Analysis & Statistics": {
+      "description": "Tasks for statistical analysis and quality assessment of document content. Includes counting words, calculating specific word frequency, analyzing readability levels, checking spelling and grammar consistency, evaluating document structure completeness, and generating document statistics reports.",
+      "prompts": [
+        "Count the total number of words and characters (excluding spaces) in the document",
+        "List the 10 most frequent nouns appearing in the document",
+        "Analyze the readability score of this technical document",
+        "Check whether the usage of 'company' and 'enterprise' is consistent throughout the document",
+        "Evaluate whether the heading hierarchy is complete and coherent",
+        "Generate a detailed statistics report including paragraph count, image count, and table count",
+        "Find all sentences longer than 50 characters"
+      ]
+    },
+    "Cross-Application Integration": {
+      "description": "Workflows that require LibreOffice Writer to interact with other inputs, files, or system tools. This includes extracting data from Excel to put into a report, taking system screenshots to insert into the document, or organizing files based on instructions contained within a document.",
+      "prompts": [
+        "The submission guidelines are in a document on the Desktop. Follow those instructions to organize my essay files for submission.",
+        "Run the 'df -h' command in the terminal and take a screenshot of the output to include in my system administration guide.",
+        "Read the image editing instructions in the document on the Desktop, apply those edits to the photo, and save the result.",
+        "Pull the results table from the spreadsheet in the Documents folder and insert it into the 'Results' section of my report."
+      ]
+    },
+    "Document Review & Collaborative Editing": {
+      "description": "Tasks for document proofreading, version control, and multi-user collaboration. Includes tracking revision history, accepting or rejecting changes, adding comments and annotations, comparing document differences, generating review summaries, and managing collaborative workflows with multiple contributors.",
+      "prompts": [
+        "Please turn on Track Changes so I can see all editing marks",
+        "Accept all formatting changes but reject all content deletions",
+        "Add a comment to the second paragraph asking for the source of this data",
+        "Compare the differences between the current document and 'final_version_v1.docx' and generate a report",
+        "Show all unresolved comments in the current document",
+        "Accept all revision marks at once",
+        "Create a document version record labeled 'November 2023 Review Version'"
+      ]
+    },
+    "File Management, System & CLI": {
+      "description": "Tasks involving the management of the file itself, the application settings, or interaction via the command line. This includes exporting to PDF, configuring default fonts, installing extensions, recovering from crashes (force quit), and batch processing files via terminal commands.",
+      "prompts": [
+        "Writer has frozen and won't respond. Can you force quit it from the terminal without restarting the computer?",
+        "Convert all the .odt files in the current directory to PDF format with a single terminal command.",
+        "Save this document as a PDF with the same filename, placing the output on the Desktop.",
+        "Enable the collaborative editing feature so my team can work on this document together in real time.",
+        "Set 'Liberation Sans' as the default font for all new Writer documents I create.",
+        "Install a grammar checking extension for LibreOffice Writer to help me proofread.",
+        "Split this large document into separate files, one per chapter, and save them using the chapter titles as filenames."
+      ]
+    },
+    "Forms & Interactive Elements": {
+      "description": "Tasks for creating fillable forms and interactive documents. Includes inserting various form controls (text boxes, checkboxes, dropdown lists), setting form protection, creating calculable fields, adding interactive buttons, designing digital signature areas, and converting documents to fillable PDF forms.",
+      "prompts": [
+        "Insert a 'Department' selection box with dropdown options in the document",
+        "Create an approval form requiring name and date input",
+        "Set form protection to allow editing only in specific areas",
+        "Add a 'Submit' button that sends via email when clicked",
+        "Design a quotation form with automatic total amount calculation",
+        "Add a digital signature area at the end of the document",
+        "Convert this questionnaire to a fillable PDF form for online use"
+      ]
+    },
+    "Long Documents & Master Documents": {
+      "description": "Tasks for handling large, complex document structures. Includes creating tables of contents and indexes, managing chapter numbering, using master documents to merge subdocuments, generating lists of figures and tables, creating bookmark and hyperlink navigation, setting different header/footer formats, and managing multi-level numbering systems.",
+      "prompts": [
+        "Automatically generate a table of contents based on heading styles",
+        "Create an index containing all keywords",
+        "Merge five separate chapter files into one master document",
+        "Generate separate lists for all figures and tables",
+        "Create a bookmark navigation page with hyperlinks at the beginning of the document",
+        "Use Roman numerals for page numbers starting from page 3, Arabic numerals for the main text",
+        "Set up a three-level heading numbering system: Chapter 1 → 1.1 → 1.1.1"
+      ]
+    },
+    "Page Layout & Document Structure": {
+      "description": "Operations focused on the overall arrangement and structure of the document pages. This covers text alignment (center, tab stops), paragraph separation, inserting page breaks, adding page numbers, and setting up mixed formatting rules for specific document sections (e.g., introduction vs. body).",
+      "prompts": [
+        "Set up a tab stop at the 4-inch mark so I can create a two-column layout with left-aligned labels and right-aligned values.",
+        "Center-align the main title at the top of the document so it looks like a proper title page.",
+        "Add extra spacing between each paragraph in the summary section to make the document easier to skim.",
+        "Insert page numbers at the bottom center of every page starting from page 1.",
+        "Insert a page break after the table of contents so the main content starts on a fresh page.",
+        "Set the introduction section to single spacing, the main body to 1.5 spacing, and the appendix to double spacing."
+      ]
+    },
+    "Security & Permission Management": {
+      "description": "Tasks involving document security, permission control, and information protection. Includes setting document password protection, applying digital signatures, adding watermarks, restricting editing permissions, removing metadata and hidden information, setting document expiration times, and controlling printing and copying permissions.",
+      "prompts": [
+        "Set both open password and modify password for the document",
+        "Add a 'DRAFT' watermark to every page",
+        "Restrict the document to be editable only by specific personnel",
+        "Remove all metadata and author information from the document",
+        "Add a digital signature to verify document integrity",
+        "Set the document to become read-only after December 31, 2024",
+        "Allow viewing but prohibit printing and copying document content"
+      ]
+    },
+    "Tables, Images & References": {
+      "description": "Tasks related to inserting and managing non-text elements and academic citations. Includes creating tables, converting text to tables, inserting images/screenshots at specific cursor locations, and managing bibliographies or cross-references.",
+      "prompts": [
+        "Add this citation to my bibliography: 'Smith, J., & Jones, M. (2024). Advances in renewable energy storage technologies. Energy Review, 45(2), 112-128.' and insert a reference to it in the introduction section.",
+        "Insert a 4-column by 6-row table at the current cursor position for my data summary.",
+        "Convert the comma-separated list of items into a properly formatted table with borders.",
+        "Place the screenshot saved on the Desktop into the document at the location marked 'insert image here'."
+      ]
+    },
+    "Templates & Automation": {
+      "description": "Tasks involving document template creation, style management, and automation operations. Includes creating and saving custom templates, applying preset style sets, recording and running macros, creating custom keyboard shortcuts, setting up AutoCorrect rules, and using field codes for automated content updates.",
+      "prompts": [
+        "Save the current document's formatting as a new report template",
+        "Apply the company letterhead template to the entire document",
+        "Record a macro: automatically format selected text as Heading 2 style",
+        "Create a keyboard shortcut Ctrl+Shift+D for 'Insert Current Date'",
+        "Set up an AutoCorrect rule to automatically replace '(c)' with '©'",
+        "Insert an automatically updating filename field in the header",
+        "Create an auto-numbered caption style for figures"
+      ]
+    },
+    "Text Formatting & Styling": {
+      "description": "Tasks that involve changing the visual appearance of the text characters and paragraphs. This includes adjusting line spacing, font types, text sizes, capitalization (case conversion), applying visual styles like subscripts or italics, and removing or applying highlights.",
+      "prompts": [
+        "In the chemical formula CO2, make the '2' appear as a subscript below the line.",
+        "Change the line spacing of the selected paragraphs from single to 1.5 spacing for better readability.",
+        "Make all italicized passages also bold so they stand out more clearly from the regular text.",
+        "Convert all the section headings from lowercase to uppercase throughout the document.",
+        "Switch the entire document to use the 'Liberation Serif' font family instead of the current one.",
+        "Remove all the yellow highlighting from the document now that I've addressed the marked sections.",
+        "Make all italicized passages also bold so they stand out more clearly from the regular text."
+      ]
+    }
+  },
+  "os": {
+    "CLI_Advanced_Workflow_and_Scripting": {
+      "description": "Tasks focused on complex file manipulation, text processing, and version control using purely the Terminal. The agent interacts with the command line interface to execute commands like git, grep, sed, chmod, chown, and tar. The environment initializes with the Terminal open, positioned inside a directory with specific data (Git repo, log files, or deep file trees).",
+      "prompts": [
+        "Recursively count the lines of all PHP files in the current directory and print the total.",
+        "Change the permissions of all shell scripts in the current folder to be executable (chmod +x).",
+        "Commit the current changes in this git repository with the message 'daily update'.",
+        "Find all files containing the string 'error' in the '/var/logs' directory and copy them to '~/errors'.",
+        "Compress the 'project' folder into a 'project.tar.gz' archive using the tar command."
+      ]
+    },
+    "CLI_Software_Installation_and_Setup": {
+      "description": "Tasks focused on installing software and configuring environments using the Terminal, often assisted by a Browser for documentation. The workflow typically involves searching for installation commands in Chrome and executing them in the Terminal. The environment always initializes with both the Terminal and Chrome open.",
+      "prompts": [
+        "I want to install 'Spotify'. Search for the installation command and run it in the terminal.",
+        "Install the 'git' package using apt-get.",
+        "Search online for the installation steps for the Docker container platform and install it via the terminal.",
+        "The 'conda' command is not found. Please check the .bashrc file and add the correct path.",
+        "Search for how to install 'Visual Studio Code' on Ubuntu and perform the installation via terminal."
+      ]
+    },
+    "GUI_File_Manager_Operations": {
+      "description": "Tasks focused on managing files and directories using the graphical user interface (Nautilus). The agent interacts with file icons, context menus (right-click), and window toolbars. Operations include creating folders, renaming items, moving/copying files via drag-and-drop or copy-paste shortcuts, deleting files to Trash, and recovering them. The environment always initializes with the File Manager open in a directory populated with diverse files.",
+      "prompts": [
+        "Open the 'photos' folder and create a new subfolder named 'vacation_2024'.",
+        "Rename the directory 'todo_list_Jan_1' to 'todo_list_Jan_2' using the right-click menu.",
+        "Move all image files from the 'Downloads' folder to the 'Pictures' folder using drag-and-drop.",
+        "I accidentally deleted 'report.pdf'. Please open the Trash and restore it.",
+        "Copy the file 'notes.txt' from the Desktop and paste it into the 'Documents' folder."
+      ]
+    },
+    "System_Settings_Configuration": {
+      "description": "Tasks focused on customizing the operating system via the GNOME Control Center. The agent interacts with the Settings window, navigating the left sidebar to find categories (Display, Sound, Power, etc.) and adjusting sliders, toggles, or dropdowns on the right panel. The environment always initializes with the Settings window open.",
+      "prompts": [
+        "The volume is too low. Please open Sound settings and turn the system volume up to 100%.",
+        "Change the desktop background to the image 'wallpaper.jpg' located in the Pictures folder.",
+        "The system sounds are too quiet. Open the audio settings and raise the output volume to maximum.",
+        "I want to see the battery percentage in the top bar. Please enable this option in Power settings.",
+        "Add 'English (UK)' to the input sources in the Keyboard settings.",
+        "Change the screen resolution to 1920x1080 in the Display settings."
+      ]
+    }
+  },
+  "thunderbird": {
+    "Account_Lifecycle_Management": {
+      "description": "Tasks focused on the fundamental management of email identities and server connections. This category covers the entire lifecycle of an account: adding new email accounts (IMAP/POP3), configuring SMTP servers, managing multiple identities (aliases), editing server port/security settings, changing passwords, managing security certificates (PGP/GPG keys), and removing obsolete accounts. It also includes managing the user profile itself (Profile Manager) and offline settings.",
+      "prompts": [
+        "Add a secondary sender identity 'Customer Support' using my support@mycompany.com address to my existing account.",
+        "I need to send emails using a different alias. Please add a new identity 'Support Team' with the email 'support@anonym.com' to my main account.",
+        "Configure the account to only send emails (no incoming server) for a notification-only address.",
+        "My email provider changed their outgoing server settings. Please update the SMTP server port to 587 and connection security to STARTTLS for my primary account.",
+        "Due to security reasons, I need to work offline. Please switch Thunderbird to Offline Mode and configure it to ask me before downloading messages when I go back online.",
+        "I need to manage my PGP keys. Please open the End-to-End Encryption settings for my account and generate a new key pair.",
+        "Could you help me open up the Thunderbird profile manager utility to create a separate profile for my work emails?",
+        "Can you help me set up Thunderbird to send emails from anonym-x2024@outlook.com without configuring its incoming email service?"
+      ]
+    },
+    "Composition_and_Communication_Flow": {
+      "description": "Tasks focused on the active process of writing, editing, and sending emails. This includes using the Composition window features: attaching files, formatting text (HTML/Plain text), using spell check, managing recipients (To/CC/BCC), requesting read receipts, setting message priority, forwarding messages inline or as attachments, and using address book autocomplete during composition.",
+      "prompts": [
+        "Forward the selected email thread to the new team member as an attachment so the full conversation history is preserved.",
+        "Attach the quarterly financial summary from the Documents folder to this draft email I'm working on.",
+        "Compose a new email to 'boss@company.com' with High Priority and request a Return Receipt to ensure he reads it.",
+        "Forward the selected email to 'team@project.com' as an attachment (not inline) so the headers are preserved.",
+        "I need to send a plain text email. Please switch the composition mode from HTML to Plain Text for the current draft.",
+        "Check the spelling of the current draft email and add the word 'Thunderbird' to the personal dictionary.",
+        "Run a spell check on this draft before I send it and add our product names to the custom dictionary.",
+        "Reply to all recipients of the currently selected email, but move 'john@doe.com' from the CC field to the BCC field."
+      ]
+    },
+    "Data_Extraction_and_Cross_App_Workflow": {
+      "description": "Tasks involving the transfer of data into or out of Thunderbird, interacting with the Operating System or other Applications. This includes exporting emails to EML/PDF/HTML, saving attachments to specific disk locations, importing contacts from CSV/VCF files, exporting address books, printing emails to file, and workflows where Thunderbird acts as a source for Office suites or file managers.",
+      "prompts": [
+        "Drag the selected email from Thunderbird into the open file manager window to save it as an EML file for archiving.",
+        "Take the last 10 emails from my inbox and create a summary spreadsheet with the sender and subject of each.",
+        "Extract the product photo from the document attached to the latest email and set it as my desktop wallpaper.",
+        "Help me extract the latest 5 emails in daily folder from Thunderbird, and creates a LibreOffice Calc Report \"report.xlsx\" storing the sender and subject.",
+        "Import the customer contact list from the VCF file on the Desktop into a new address book called 'Customers'.",
+        "Import the list of contacts from the 'clients.vcf' file located on the Desktop into a new Address Book named 'Work Clients'.",
+        "Select the email with the subject 'Project Update', print it to a PDF file named 'update.pdf', and save it to the Documents folder.",
+        "Drag the selected email from Thunderbird and drop it into the 'Project_Docs' folder open in the Nautilus file manager to save it as an .eml file."
+      ]
+    },
+    "Email_Organization_and_Automation": {
+      "description": "Tasks focused on the logical structuring, sorting, and automated processing of email data. This category involves creating and managing folder hierarchies (local or IMAP), setting up message filters (rules) to auto-move or tag emails, managing Junk/Spam controls, configuring archiving policies, using Quick Filter and Global Search, setting up Virtual Folders (Saved Searches), and managing message tags/labels.",
+      "prompts": [
+        "Create a folder called 'Newsletters' and set up a rule to automatically move any email containing 'unsubscribe' in the body to that folder.",
+        "Thunderbird's message filters seem to only fire on Inbox automatically. Could you help me apply the existing 'Spam' filter manually to the 'Archives' folder?",
+        "Create two local folders: 'Work' and 'Personal' for organizing different types of correspondence.",
+        "I want to organize my emails by year. Please set up the Archiving options to keep message archives in a single folder per year.",
+        "Find all emails from 'amazon.com' received last month and save this search as a Virtual Folder named 'Amazon Receipts'.",
+        "My inbox is cluttered. Please sort the current folder by 'Unread' status first, and then by 'Date' descending.",
+        "Configure the Junk settings to automatically delete spam messages older than 14 days to save space.",
+        "Create a new tag named 'Follow-up' with a red color and apply it to the top three emails in the Inbox."
+      ]
+    },
+    "Interface_Personalization_and_Settings": {
+      "description": "Tasks focused on customizing the visual appearance, layout, and global user preferences of the application. This covers changing UI themes (Light/Dark), adjusting font sizes and types for readability, configuring the Folder Pane and Message Pane layout (Classic/Wide/Vertical), customizing the toolbar (adding/removing buttons), managing columns in the message list, setting up notifications/sounds, and configuring general behavior like 'Mark as read' delays or startup options.",
+      "prompts": [
+        "Considering I work late into the night, I find a full dark mode easier on my eyes. Can you help me enable a complete dark mode in Thunderbird?",
+        "I prefer a vertical layout where the message preview is on the right side of the list. Please change the view layout to 'Vertical View'.",
+        "The font size in the message list is too small. Please increase the density to 'Touch' mode or increase the font size to make it more readable.",
+        "When I reply to an email, it quotes the original message with indentation. Could you help me remove the indentation and the '>' character from the quote settings?",
+        "Customize the main toolbar by adding a 'Print' button and removing the 'Chat' button so I can access printing faster.",
+        "I don't like the notification sound. Please disable the 'Play a sound' option when a new message arrives in the General Preferences.",
+        "In the message list, I need to see the size of the emails. Please enable the 'Size' column and drag it to be next to the 'Subject' column.",
+        "Set up a signature using my name 'Anonym' and affiliation 'XYZ Lab' to be automatically appended to my emails."
+      ]
+    }
+  },
+  "vlc": {
+    "Cross_Application_Integration": {
+      "description": "Complex workflows where VLC acts as the source of information or assets for other applications (LibreOffice, GIMP, Code Editors). This requires the agent to handle window management, clipboard operations (copy/paste), and file system transfers between apps. Scenarios include extracting frames for presentation backgrounds, ripping audio for slideshow music, creating GIFs from video sources, or simply positioning VLC alongside another app for reference.",
+      "prompts": [
+        "Arrange VLC on the left half of the screen playing the tutorial and position a text editor on the right half so I can follow along and take notes.",
+        "Create an animated GIF from a 4-second segment of this video starting at the 1:30 mark using VLC to extract frames and GIMP to assemble the animation.",
+        "Extract the soundtrack from this video clip and add it as background audio that plays throughout the entire slideshow.",
+        "I need to follow a coding tutorial. Open 'tutorial.mp4' with VLC and position it on the left side of the screen, then open VS Code on the right side.",
+        "Take a snapshot of the chart shown at 02:15 in the video and insert it into the open LibreOffice Writer document."
+      ]
+    },
+    "Playback_Control_and_Navigation": {
+      "description": "Tasks focused on the consumption of media content. The agent needs to launch VLC, open specific files (local or playlists), and manipulate the playback state. This includes seeking to specific timestamps (e.g., 'jump to 10:00'), adjusting playback speed (1.5x, 2x), managing audio tracks/subtitles (loading .srt files), taking snapshots (Video > Snapshot), and using playlist controls. The environment usually initializes with a video file ready on the desktop.",
+      "prompts": [
+        "Play the video 'lecture.mp4' on the desktop and jump to the 15-minute mark.",
+        "Open 'movie.mkv' and load the subtitle file 'movie_eng.srt' located in the same folder.",
+        "I need to review this footage quickly. Please play 'meeting_recording.mp4' at 2x speed.",
+        "Could you take a snapshot of the video at 00:45 and save it to the desktop?",
+        "Create a playlist with all the .mp3 files on the Desktop and start playing them in shuffle mode."
+      ]
+    },
+    "System_Configuration_and_Network": {
+      "description": "Tasks related to configuring the VLC application itself or its relationship with the Operating System and Network. This includes setting VLC as the default media player, changing interface themes/skins, customizing preferences (e.g., 'Always on top', hardware acceleration), and opening network streams (URL playback). The agent needs to interact with the 'Tools > Preferences' menu or OS-level settings.",
+      "prompts": [
+        "Switch the VLC interface to use a minimal skin that only shows playback controls without the window frame.",
+        "I want to watch a live stream. Please open the network stream URL 'http://example.com/stream.m3u8' in VLC.",
+        "Change the VLC interface to look more modern by enabling the dark theme or installing a custom skin.",
+        "Set VLC to 'Always on top' mode so it doesn't get covered by other windows while I work.",
+        "Disable the 'Show media title on video start' option in the VLC preferences to keep the playback clean."
+      ]
+    },
+    "Transcoding_Conversion_and_Extraction": {
+      "description": "Tasks that utilize VLC's 'Media > Convert / Save' features to alter file formats or extract specific data streams. This involves changing containers (e.g., MKV to MP4) for compatibility, extracting audio tracks (Video to MP3/WAV), trimming specific segments of a video (using record or start/stop times), and compressing video files. The agent must navigate the conversion dialogs, select profiles, and define destination paths.",
+      "prompts": [
+        "Convert the video 'raw_footage.mkv' to MP4 format so I can share it easily. Save it as 'final.mp4'.",
+        "I only need the audio from this lecture video. Please extract the audio track from 'class.mp4' and save it as 'class_audio.mp3'.",
+        "The video file is too large. Use VLC to compress 'holiday.mov' by converting it to a standard MP4 with a lower bitrate.",
+        "Could you cut a 30-second clip from 'long_video.mp4' starting from 05:00 and save it as 'clip.mp4'?"
+      ]
+    }
+  },
+  "vs_code": {
+    "Code_Editing_Refactoring_and_Navigation": {
+      "description": "Tasks focused on the core coding experience, emphasizing productivity, code intelligence, and structural editing. This covers the actual interaction with source code text.\n\nFor Example:\n1. **Navigation**: Using 'Go to Definition', 'Find References', 'Go to Symbol', and 'Breadcrumbs' to traverse complex codebases. Switching between Header/Source files.\n2. **Search & Replace**: Using the Find widget (Ctrl+F) for local search and the Search View (Ctrl+Shift+F) for global regex search/replace across the project.\n3. **Refactoring**: Performing semantic changes like 'Rename Symbol' (F2), 'Extract Method', 'Extract Variable', and organizing imports.\n4. **Formatting & Linting**: Applying 'Format Document' (Prettier/Autopep8), fixing indentation issues, and using Quick Fix (Lightbulb) to resolve syntax errors or warnings.\n5. **Advanced Editing**: Using Multi-cursor editing (Alt+Click), Column selection, Snippets insertion, moving lines up/down, and commenting/uncommenting blocks.",
+      "prompts": [
+        "I am currently working on 'bubbleSort.py'. Please assist me in completing the 'bubbleSort' function logic.",
+        "Extract the repeated calculation logic into a new helper function using the refactoring tools.",
+        "Indent the selected block of code by one more level to nest it properly inside the if statement.",
+        "Navigate to the definition of the 'calculate_total' function and rename it to 'calc_sum' so that all references are updated.",
+        "The code indentation is messy. Please use the 'Format Document' command to clean up the current file.",
+        "I need to comment out the entire 'main' function block to test a different entry point.",
+        "Use the multi-cursor feature to add a comma at the end of every line in the selected text block.",
+        "I am writing my paper thesis. I have listed all referenced papers in the opened docx. Could you help me export the dblp bibtex of these papers into 'references.bib'."
+      ]
+    },
+    "Core_Editor_Settings_and_Customization": {
+      "description": "Tasks related to tailoring the Integrated Development Environment (IDE) to personal preferences and accessibility needs. This category encompasses a wide range of configuration methods, including using the graphical Settings UI (Ctrl+,), editing the raw 'settings.json' file, and using the Command Palette. \n\nFor Example:\n1. **Visual Appearance**: Changing Color Themes (Light/Dark/High Contrast), File Icon Themes, and window zoom levels.\n2. **Typography & Layout**: Adjusting Font Family, Font Size, Line Height, and Ligatures. Configuring UI elements like the Sidebar position (Left/Right), Minimap visibility, Breadcrumbs, Status Bar, and Activity Bar.\n3. **Editor Behavior**: Configuring 'Auto Save' policies (afterDelay, onFocusChange), Word Wrap settings, Tab Size vs. Spaces, Line Numbers (on/off/relative), and Cursor style.\n4. **Keybindings**: Customizing Keyboard Shortcuts (keybindings.json) to map specific commands to custom keys or resolving conflicts.\n5. **File Associations**: Configuring how specific file extensions are handled or highlighted.",
+      "prompts": [
+        "Set up a custom keyboard shortcut: Ctrl+Shift+P to open the command palette from any view.",
+        "Switch the file icon theme to a set that shows more distinctive icons for different programming languages.",
+        "Enable the setting that wraps editor tabs to multiple rows when there are too many to fit on one line.",
+        "The font size in the editor is too small. Please increase the Zoom Level of the entire window by 1 step.",
+        "Add a vertical ruler at column 100 in the editor to help me keep my code lines within the style guide limit.",
+        "I don't need the Minimap on the right side of the editor. Please disable the 'Editor: Minimap' setting.",
+        "Please help me create a shortcut 'ctrl+shift+t' to trigger the 'Terminal: Create New Terminal' command.",
+        "Configure the editor to automatically format the file on save.",
+        "Turn on the auto-save feature with a 1-second delay so I don't have to manually save every time."
+      ]
+    },
+    "Debugging_Execution_and_Language_Support": {
+      "description": "Tasks related to the runtime analysis of code, build processes, and language-specific environment configurations. This category moves beyond static editing to dynamic execution.\n\nFor Example:\n1. **Execution**: Running scripts via 'Run Code' (Code Runner), the Integrated Terminal, or the built-in 'Run and Debug' play button.\n2. **Debugging Configuration**: Creating and modifying 'launch.json' files to define debug sessions (arguments, env vars). Attaching to running processes.\n3. **Runtime Inspection**: Setting Breakpoints (conditional, logpoints), Stepping through code (Over/Into/Out), inspecting variables in the 'Variables'/'Watch' view, and evaluating expressions in the Debug Console.\n4. **Data Science**: Using the Data Viewer to inspect large arrays/DataFrames, running Jupyter Notebook cells, and viewing plots.\n5. **Environment Setup**: Selecting the correct Interpreter (e.g., Python venv, Conda env), configuring 'tasks.json' for build tasks, and handling compiler paths.",
+      "prompts": [
+        "Open the data viewer to inspect the contents of the large NumPy array in my current Python script.",
+        "Run the calculator program and capture its output, saving the result to a log file on the Desktop.",
+        "Execute the current test file in the integrated terminal and show me the pass/fail results.",
+        "Set a breakpoint on line 15 of 'main.py' and start the debugger.",
+        "The script is failing because it's using the wrong Python version. Please change the Python Interpreter to the one in '/usr/bin/python3'.",
+        "Configure the debugger to keep the focus on the debug console instead of jumping back to the editor.",
+        "Run the current 'test.py' file in the integrated terminal and show me the output."
+      ]
+    },
+    "Extension_Management_and_External_Tools": {
+      "description": "Operations focused on extending the IDE's capabilities through the VS Code Marketplace or local packages. This involves the full lifecycle management of extensions.\n\nFor Example:\n1. **Installation**: Searching for and installing extensions from the Marketplace (e.g., Python, C++, Prettier, Jupyter), or installing from local .vsix files (Offline Installation).\n2. **Management**: Disabling or Enabling extensions globally or for specific workspaces (e.g., disabling a linter for a specific project). Uninstalling unused extensions.\n3. **Configuration**: Modifying extension-specific settings (e.g., setting the default Python formatter to 'Black', configuring LaTeX compiler paths).\n4. **Troubleshooting**: Using the 'Extension Bisect' feature or filtering extensions by 'Enabled/Disabled' to identify performance bottlenecks.\n5. **Integration**: Setting up external tools that extensions rely on, such as language servers, linters, or debug adapters.",
+      "prompts": [
+        "Please help me install the 'Python' extension by Microsoft from the Marketplace.",
+        "I have a custom extension file located at '/home/user/Downloads/test.vsix'. Please install this extension into VS Code.",
+        "Please help me install the autoDocstring extension to help me generate docstrings automatically.",
+        "Disable the 'ESLint' extension for the current workspace only, as this project does not use it.",
+        "Search for a 'Markdown Preview' extension and install the one with the highest number of downloads.",
+        "I suspect an extension is causing performance issues. Please open the Extension view and show only the 'Enabled' extensions.",
+        "Configure the Python extension to use 'Black' as the default provider for formatting."
+      ]
+    },
+    "Project_Workspace_and_File_Operations": {
+      "description": "Tasks involving the organization and manipulation of the file system context within VS Code. This category bridges the OS file system with the IDE's Explorer view.\n\nFor Example:\n1. **Context Initialization**: Opening specific files, single folders, or Multi-root Workspaces (.code-workspace) via the GUI or Command Line (CLI).\n2. **Workspace Management**: Adding or removing folders from the current workspace, saving the current window configuration as a permanent Workspace file, and managing Workspace-specific settings.\n3. **File Manipulation**: Creating, Renaming, Deleting, Moving, or Duplicating files and folders directly within the VS Code Explorer.\n4. **Visibility Control**: Configuring 'files.exclude' or 'search.exclude' to hide specific patterns (e.g., __pycache__, .git, node_modules) from the UI.\n5. **Cross-Window Management**: Opening new windows, duplicating the current workspace in a new window, or switching between open projects.",
+      "prompts": [
+        "Open the same project folder in a new VS Code window without closing the current one.",
+        "Please help me save the current window setup as a workspace file named 'MyProject.code-workspace' in the home directory.",
+        "Launch VS Code from the terminal and open the project folder at ~/Desktop/my-app directly.",
+        "Create a new file named 'requirements.txt' inside the 'docs' folder using the Explorer view.",
+        "Save the current multi-folder window setup as a workspace file named 'fullstack.code-workspace'.",
+        "Open the folder '/home/user/Documents/Website' in a new window, keeping the current project open.",
+        "Create a new Python script in VS Code and save it directly to the Desktop.",
+        "Open two different workspace files in two separate windows to work on different projects."
+      ]
+    }
+  }
+}
