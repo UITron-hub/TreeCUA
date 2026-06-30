@@ -49,5 +49,7 @@ export SCORING_MODEL="gpt-4o-mini"
 # ============================================================
 # Resource paths
 # ============================================================
+# A simplified reference version of world_knowledge.json is provided
+# at data_resource/world_knowledge.json in this repository.
 export WORLD_KNOWLEDGE_PATH="/path/to/world_knowledge.json"
 export RESOURCE_DIR="/path/to/test/resources"
