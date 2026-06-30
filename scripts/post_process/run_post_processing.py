@@ -6,9 +6,9 @@ Usage:
     python scripts/post_process/run_post_processing.py --session_dir /path/to/session
 
 Environment variables:
-    LLM_API_URL     - LLM API base URL (required)
-    LLM_API_KEY     - LLM API key (required)
-    LLM_MODEL       - Model name for post-processing agents
+    POSTPROCESS_API_URL     - OpenAI-compatible API base URL (required)
+    POSTPROCESS_API_KEY     - OpenAI-compatible API key (required)
+    POSTPROCESS_MODEL       - Model name for post-processing agents (default: gpt-4o-mini)
 """
 
 import argparse
@@ -22,7 +22,7 @@ _project_root = os.path.dirname(os.path.dirname(_script_dir))
 if _project_root not in sys.path:
     sys.path.insert(0, _project_root)
 
-from exploration.config import get_api_config
+from exploration.config import get_postprocess_config
 from exploration.post_processing import (
     PostProcessingPipeline,
     PostProcessConfig,
@@ -45,15 +45,15 @@ def main():
     )
     parser.add_argument(
         "--api_url", type=str, default=None,
-        help="LLM API base URL (default: $LLM_API_URL)."
+        help="OpenAI-compatible API base URL (default: $POSTPROCESS_API_URL)."
     )
     parser.add_argument(
         "--api_key", type=str, default=None,
-        help="LLM API key (default: $LLM_API_KEY)."
+        help="OpenAI-compatible API key (default: $POSTPROCESS_API_KEY)."
     )
     parser.add_argument(
         "--model", type=str, default=None,
-        help="Model name (default: $LLM_MODEL)."
+        help="Model name (default: $POSTPROCESS_MODEL)."
     )
 
     parser.add_argument(
@@ -84,7 +84,7 @@ def main():
         logger.error(f"Session directory not found: {args.session_dir}")
         sys.exit(1)
 
-    api_cfg = get_api_config(
+    api_cfg = get_postprocess_config(
         api_url=args.api_url,
         api_key=args.api_key,
         model=args.model,
@@ -92,7 +92,7 @@ def main():
     if not api_cfg.api_url or not api_cfg.api_key:
         logger.error(
             "API URL and API key are required. "
-            "Set LLM_API_URL and LLM_API_KEY environment variables."
+            "Set POSTPROCESS_API_URL and POSTPROCESS_API_KEY environment variables."
         )
         sys.exit(1)
 

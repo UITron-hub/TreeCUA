@@ -8,56 +8,12 @@ from typing import Dict, List, Any, Optional
 from dataclasses import dataclass
 import threading
 
+from exploration.prompts import POSTPROCESS_SCORING_SYSTEM_PROMPT
+
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("scoring_agent")
 
-# ==========================================
-# 0-3 分制打分 Prompt
-# ==========================================
-SCORING_SYSTEM_PROMPT = """
-You are an expert Data Quality Analyst for GUI Agent training data.
-Evaluate the user trajectory based on the "Target Task" and the "Execution Storyline".
-
-### Scoring Scale (0–3)
-
-**Metric 1: Task Utility & Realism (0–3)**
-*Focus: Is this a valuable real-world task, or just meaningless browsing?*
-- **3 (High Value)**: The entire process involved valuable editing, design, and modification operations that produced meaningful, realistic user-like impacts on the environment, demonstrating a certain level of difficulty and depth—not merely simple clicking and browsing.
-- **2 (Moderate Value)**: A valid but simple task (e.g., Simple editing operations). The intent is clear, though the scope is limited. 
-- **1 (Low Value)**: Includes a large number of simple browsing clicks with little to no value, having almost no impact on the environment.
-- **0 (No Value)**: Pure **meaningless browsing**. The user is just clicking around randomly with no valuable goal. The trajectory represents noise rather than a task.
-
-**Metric 2: Step Efficiency & Validity (0–3)**
-*Focus: Penalize failed steps, useless actions, and "hanging" starts.*
-- **3 (Pure)**: **Free of all negative patterns.** No failed steps. No actions that yield zero info. No redundant steps. The trajectory is complete (does not stop immediately after opening an interface).
-- **2 (Acceptable)**: High quality but contains **trace amounts of inefficiency**. May have 1~2 useless click, a very minor detour, failed steps or "hanging" incomplete steps in the end.
-- **1 (Noisy)**: Contains **a lot of negative patterns**: (a) Actions that failed/errored, (b) Steps that provided no new information or value, OR (c) The task feels abruptly cut off (incomplete).
-- **0 (Dirty)**: **Dominated by negative patterns**. The trajectory is either: (a) Mostly failed/useless actions, (b) Just opening an interface and immediately ending (hanging start), or (c) Providing absolutely no help toward the final goal.
-
-**Metric 3: Task-Action Consistency (0–3)**
-*Focus: All successful steps in the trajectory are strictly necessary and sufficient conditions for completing the final task. Specifically, each successful step in the trajectory contributes to completing the final task without redundancy or omission; and the description of the final task is sufficiently precise and specific to guide the performer in completing the task using the same steps as those in the trajectory.
-- **3 (Perfect Match)**: The executed actions perfectly align with the text description.
-- **2 (General Match)**: A small number of steps were successfully executed but did not contribute to completing the target task, or the task description was insufficiently clear, preventing the executor from reconstructing the original steps based solely on the task.
-- **1 (Weak Match)**: The actions diverge significantly; only tangentially related.
-- **0 (Mismatch)**: The user is doing something completely different from the described task.
-
-**Metric 4: Action Coherence & Continuity (0–3)**
-*Focus: Is the flow logical? Penalize "Context Switching" without completion.* Note whether the user switched intent before completing a valuable subtask.
-- **3 (Smooth Flow)**: Strong causal links. The user sticks to one context until the sub-task is done.
-- **2 (Minor Detours)**: Generally logical, but may momentarily lose focus before correcting. (less than 2 steps)
-- **1 (Fragmented)**: "Context Hopping." Opens an app/menu, does nothing meaningful, then jumps to another context.
-- **0 (Chaotic)**: Random jumping between unrelated apps or UI elements with no logic.
-
-### Output Format (JSON):
-{
-    "reason": "<Concise analysis covering utility, step purity (specifically mentioning if failed/hanging steps exist), and coherence>",
-    "task_utility": <int 0-3>,
-    "step_efficiency": <int 0-3>,
-    "task_consistency": <int 0-3>,
-    "action_coherence": <int 0-3>
-}
-"""
 
 class RateLimiter:
     """简单的速率限制器"""
@@ -196,7 +152,7 @@ class TrajectoryScoringAgent:
         """
 
         messages = [
-            {"role": "system", "content": SCORING_SYSTEM_PROMPT},
+            {"role": "system", "content": POSTPROCESS_SCORING_SYSTEM_PROMPT},
             {"role": "user", "content": user_content}
         ]
 
@@ -383,24 +339,24 @@ def process_all_trajectories(root_path: str, scorer: TrajectoryScoringAgent):
 
 if __name__ == "__main__":
     import argparse
-    from exploration.config import get_scoring_config
+    from exploration.config import get_postprocess_config
 
     parser = argparse.ArgumentParser(description="Run trajectory scoring on exploration results.")
     parser.add_argument("--target_dir", type=str, required=True,
                         help="Path to the trajectories directory to score.")
     parser.add_argument("--api_url", type=str, default=None,
-                        help="API base URL (default: $SCORING_API_URL or $LLM_API_URL).")
+                        help="API base URL (default: $POSTPROCESS_API_URL).")
     parser.add_argument("--api_key", type=str, default=None,
-                        help="API key (default: $SCORING_API_KEY or $LLM_API_KEY).")
+                        help="API key (default: $POSTPROCESS_API_KEY).")
     parser.add_argument("--model", type=str, default=None,
-                        help="Model name (default: $SCORING_MODEL or $LLM_MODEL).")
+                        help="Model name (default: $POSTPROCESS_MODEL).")
     parser.add_argument("--max_workers", type=int, default=20,
                         help="Number of concurrent workers.")
     parser.add_argument("--force_rescore", action="store_true",
                         help="Re-score trajectories that already have scores.")
     args = parser.parse_args()
 
-    cfg = get_scoring_config(api_url=args.api_url, api_key=args.api_key, model=args.model)
+    cfg = get_postprocess_config(api_url=args.api_url, api_key=args.api_key, model=args.model)
     if not cfg.api_url or not cfg.api_key:
         print("Error: API URL and API key are required. Set them via environment variables or CLI args.")
         exit(1)

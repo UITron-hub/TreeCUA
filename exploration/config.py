@@ -28,9 +28,9 @@ ENV_VERIFIER_API_KEY = "VERIFIER_API_KEY"
 ENV_VERIFIER_MODEL = "VERIFIER_MODEL"
 ENV_VERIFIER_MAX_TOKENS = "VERIFIER_MAX_TOKENS"
 
-ENV_SCORING_API_URL = "SCORING_API_URL"
-ENV_SCORING_API_KEY = "SCORING_API_KEY"
-ENV_SCORING_MODEL = "SCORING_MODEL"
+ENV_POSTPROCESS_API_URL = "POSTPROCESS_API_URL"
+ENV_POSTPROCESS_API_KEY = "POSTPROCESS_API_KEY"
+ENV_POSTPROCESS_MODEL = "POSTPROCESS_MODEL"
 
 ENV_WORLD_KNOWLEDGE_PATH = "WORLD_KNOWLEDGE_PATH"
 ENV_RESOURCE_DIR = "RESOURCE_DIR"
@@ -97,22 +97,23 @@ def get_verifier_config(
     )
 
 
-def get_scoring_config(
+def get_postprocess_config(
     api_url: Optional[str] = None,
     api_key: Optional[str] = None,
     model: Optional[str] = None,
 ) -> ApiConfig:
     """
-    Get API configuration for trajectory scoring and post-processing
+    Get API configuration for post-processing agents: trajectory scoring,
+    overall summarization, stage breakdown, and reason synthesis
     (OpenAI-compatible format).
 
     Does NOT fall back to LLM_API_* because those are Anthropic-native format
-    and are incompatible with the OpenAI format used by scoring/post-processing.
+    and are incompatible with the OpenAI format used by post-processing.
     """
     return ApiConfig(
-        api_url=api_url or _get_env(ENV_SCORING_API_URL),
-        api_key=api_key or _get_env(ENV_SCORING_API_KEY),
-        model=model or _get_env(ENV_SCORING_MODEL, "gpt-4o-mini"),
+        api_url=api_url or _get_env(ENV_POSTPROCESS_API_URL),
+        api_key=api_key or _get_env(ENV_POSTPROCESS_API_KEY),
+        model=model or _get_env(ENV_POSTPROCESS_MODEL, "gpt-4o-mini"),
         max_tokens=1024,
     )
 

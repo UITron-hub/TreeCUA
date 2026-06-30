@@ -34,7 +34,16 @@ Key features include:
 
 ## 🔧 Environment Setup
 
-### 1. OSWorld Environment
+### 1. Get the Code
+
+```bash
+git clone https://github.com/UITron-hub/TreeCUA.git
+cd TreeCUA
+```
+
+All subsequent commands assume you are in the project root directory.
+
+### 2. OSWorld Environment
 
 Follow the official [OSWorld setup guide](https://github.com/xlang-ai/OSWorld) to prepare your VM and environment.
 
@@ -42,9 +51,7 @@ Follow the official [OSWorld setup guide](https://github.com/xlang-ai/OSWorld) t
 - **Conda Environment:** Create and activate the OSWorld conda environment with required dependencies.
 - **VM Image:** You need a VM image (e.g., `Ubuntu.qcow2`) compatible with your chosen provider (`docker`, `vmware`, `virtualbox`, etc.).
 
-### 2. API Configuration
-
-Copy the template and fill in your API keys:
+### 3. Project Configuration
 
 ```bash
 cp config/env.template.sh config/env.local.sh
@@ -52,29 +59,35 @@ cp config/env.template.sh config/env.local.sh
 source config/env.local.sh
 ```
 
+`env.local.sh` sets `PYTHONPATH` so that `from exploration.xxx import yyy` works from any directory. The template provides sensible defaults — you only need to fill in API keys and paths.
+
+### 4. API Configuration
+
 Two separate API backends are used — they use **different protocols** and must not be mixed:
 
 | Module | Format | Env Var Prefix | Typical Model |
 |---|---|---|---|
 | ExplorationAgent | **Anthropic Messages** (`x-api-key`) | `LLM_API_*` | claude-sonnet-4-5 |
 | VerificationAgent | **OpenAI Completions** (`Bearer`) | `VERIFIER_API_*` | gpt-4o-mini |
-| Scoring / Post-processing | **OpenAI Completions** (`Bearer`) | `SCORING_API_*` | gpt-4o-mini |
+| Post-processing | **OpenAI Completions** (`Bearer`) | `POSTPROCESS_*` | gpt-4o-mini |
 
 | Env Variable | Description |
 |---|---|
+| `TREE_CUA_ROOT` | Path to the TreeCUA project root directory |
+| `PYTHONPATH` | Must include `$TREE_CUA_ROOT` for `exploration.*` imports |
 | `LLM_API_URL` | Anthropic Messages API endpoint (`/v1/messages`) |
 | `LLM_API_KEY` | Anthropic API key (`x-api-key` header) |
 | `LLM_MODEL` | Claude model name |
 | `VERIFIER_API_URL` | OpenAI-compatible endpoint (`/v1/chat/completions`) |
 | `VERIFIER_API_KEY` | OpenAI-compatible API key (`Bearer` header) |
 | `VERIFIER_MODEL` | Model for verification (e.g. `gpt-4o-mini`) |
-| `SCORING_API_URL` | OpenAI-compatible endpoint for scoring/post-processing |
-| `SCORING_API_KEY` | API key for scoring/post-processing |
-| `SCORING_MODEL` | Model for scoring (e.g. `gpt-4o-mini`) |
+| `POSTPROCESS_API_URL` | OpenAI-compatible endpoint for post-processing |
+| `POSTPROCESS_API_KEY` | API key for post-processing |
+| `POSTPROCESS_MODEL` | Model for post-processing (e.g. `gpt-4o-mini`) |
 | `WORLD_KNOWLEDGE_PATH` | Path to world knowledge JSON. A simplified version is provided at `data_resource/world_knowledge.json`. |
 | `RESOURCE_DIR` | Path to test resources (images, docs, etc.) |
 
-### 3. Download Dataset
+### 5. Download Dataset
 
 Download the TreeCUA-Datasets from [Hugging Face](https://huggingface.co/datasets/jdy18/TreeCUA-Datasets) and place it under `data_cache/TreeCUA_Datasets/`.
 
